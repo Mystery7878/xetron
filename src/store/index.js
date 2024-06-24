@@ -117,20 +117,20 @@ export const store = createStore({
     actions: {
         async fetchProducts({ commit }) {
             const response = await axios.get(
-              "http://alvahtek.com/projects/ota/group3/getProductApi.php"
+              "https://alvahtek.com/projects/ota/group3/getProductApi.php"
             );
             commit("SET_PRODUCTS", response.data);
         },
 
         async fetchOrders({ commit }) {
             const response = await axios.get(
-               "http://alvahtek.com/projects/ota/group3/getOrdersApi.php"
+               "https://alvahtek.com/projects/ota/group3/getOrdersApi.php"
             );
             commit("SET_ORDERS", response.data);
         },
         async addOrder({ commit }, order) {
             const response = await axios.post(
-              "http://alvahtek.com/projects/ota/group3/postOrderApi.php", order
+              "https://alvahtek.com/projects/ota/group3/postOrderApi.php", order
             );
             console.log(response)
             commit("SET_ORDERS", response.data);
@@ -138,7 +138,7 @@ export const store = createStore({
 
         async fetchProductById({ commit }, id) {
             const response = await axios.get(
-              `http://alvahtek.com/projects/ota/group3/getProductApi.php?id=${id}`
+              `https://alvahtek.com/projects/ota/group3/getProductApi.php?id=${id}`
             );
             console.log(response)
             commit("SET_SELECTED_PRODUCT", response.data);
